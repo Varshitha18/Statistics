@@ -30,4 +30,17 @@ public class CoinProbabilityTest {
 
         assertEquals(expectedValue, actualValue, 0.0001);
     }
+
+    @Test
+    public void testForProbabilityOfHeadNotOccurring() {
+        double headsProbability = 0.5;
+        double tailsProbability = 0.5;
+        double expectedValue = 0.5;
+        double actualValue;
+        CoinProbability coinProbability = new CoinProbability(headsProbability, tailsProbability);
+
+        actualValue = CoinProbability.not(headsProbability);
+
+        assertEquals(expectedValue, actualValue, 0.0001);
+    }
 }

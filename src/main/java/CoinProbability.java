@@ -11,6 +11,10 @@ public class CoinProbability {
         return event1_Probability*event2_Probability;
     }
 
+    public static double not(double eventProbability) {
+        return 1 - eventProbability;
+    }
+
     public double getHeadProbability() {
         return headProbability;
     }
