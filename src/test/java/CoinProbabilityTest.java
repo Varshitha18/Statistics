@@ -43,4 +43,20 @@ public class CoinProbabilityTest {
 
         assertEquals(expectedValue, actualValue, 0.0001);
     }
+
+    @Test
+    public void testForEitherTwoEventsOccurring() {
+        double headsProbability = 0.5;
+        double tailsProbability = 0.5;
+        double expectedValue = 0.75;
+        double actualValue;
+        CoinProbability coin1 = new CoinProbability(headsProbability, tailsProbability);
+        CoinProbability coin2 = new CoinProbability(headsProbability, tailsProbability);
+        double coin1_HeadProbability = coin1.getHeadProbability();
+        double coin2_TailProbability = coin2.getTailProbability();
+
+        actualValue = CoinProbability.or(coin1_HeadProbability, coin2_TailProbability);
+
+        assertEquals(expectedValue, actualValue, 0.0001);
+    }
 }

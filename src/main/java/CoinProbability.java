@@ -15,6 +15,10 @@ public class CoinProbability {
         return 1 - eventProbability;
     }
 
+    public static double or(double event1_Probability, double event2_Probability) {
+        return event1_Probability + event2_Probability - and(event1_Probability, event2_Probability);
+    }
+
     public double getHeadProbability() {
         return headProbability;
     }
